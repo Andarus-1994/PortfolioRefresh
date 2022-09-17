@@ -1,0 +1,94 @@
+@use "variables" as v;
+.contact {
+  text-align: center;
+  padding: 0 0;
+  min-height: 470px;
+  width: 100vw;
+  height: 15vh;
+  background: #242833;
+  border-top: 20px solid #383d4b;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  clip-path: polygon(50% 5%, 100% 0, 100% 100%, 0 100%, 0 0);
+  .leftContact {
+    width: 50%;
+    padding: 10px 0;
+    h3 {
+      text-decoration: underline;
+      font-size: 30px;
+      color: white;
+      margin-bottom: 30px;
+      text-align: left;
+      padding: 0 25%;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0 15%;
+      li {
+        color: white;
+        width: 250px;
+        margin: 5px 30px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        svg {
+          width: 50px;
+        }
+      }
+    }
+  }
+  .rightContact {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(33, 40, 48);
+    padding: 60px 0;
+    h3 {
+      text-transform: uppercase;
+      font-family: "Maven Pro", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 40px;
+      color: white;
+    }
+    .contactForm {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+      margin: 0 auto;
+      text-align: left;
+      color: white;
+      input,
+      textarea {
+        background: #2f3442;
+        border: none;
+        padding: 10px 5px;
+        font-family: Roboto;
+        color: white;
+        &::placeholder {
+          color: v.$light_blue;
+        }
+      }
+      button {
+        cursor: pointer;
+        font-family: Roboto;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+        width: fit-content;
+        padding: 8px 40px;
+        margin: 20px auto;
+        background: v.$light_blue;
+        box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.301);
+        border: none;
+        transition: 0.5s;
+        &:hover {
+          background: #74e674;
+          letter-spacing: 1px;
+          padding: 8px 44px;
+          box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.767);
+        }
+      }
+    }
+  }
+}

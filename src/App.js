@@ -1,5 +1,7 @@
 import "./assets/style.scss";
 import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import TopHeader from "./components/Topheader";
@@ -10,6 +12,8 @@ function App() {
       <Navbar />
       <About />
       <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }

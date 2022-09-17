@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 
 function Lines({ number }) {
   const [linesElement, setLinesElement] = useState([]);
-  console.log(number);
   const randomNumberX = () => {
     return Math.floor(Math.random() * (-350 - -150 + 1)) + -150;
   };

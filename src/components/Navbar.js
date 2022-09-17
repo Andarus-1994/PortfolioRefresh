@@ -22,12 +22,12 @@ function Navbar() {
           <a href="/#">HOME</a>
           <a href="/#about">ABOUT</a>
           <a href="/#portfolio">PORTFOLIO</a>
-          <a href="/#">CONTACT</a>
+          <a href="/#contact">CONTACT</a>
         </nav>
       </div>
       <div
         className="navbarTrigger"
-        style={visibile ? {} : { height: "50px", width: "100%" }}
+        style={visibile ? {} : { height: "30px", width: "100%" }}
         ref={navRef}
       ></div>
     </div>
