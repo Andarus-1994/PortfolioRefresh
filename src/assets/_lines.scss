@@ -1,0 +1,39 @@
+.Lines {
+  .line {
+    opacity: 0;
+    position: absolute;
+    background-color: rgb(67, 82, 79);
+    width: 2px;
+    height: 90%;
+    transform: rotate(35deg);
+    z-index: 0;
+    top: -150px;
+    animation: moveLine infinite 8s;
+    &::after {
+      content: "";
+      bottom: 0;
+      right: -4px;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+}
+@keyframes moveLine {
+  0% {
+    transform: translate(500px, -500px) rotate(45deg);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}

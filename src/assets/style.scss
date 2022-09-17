@@ -1,0 +1,36 @@
+@use "TopHeader";
+@use "navbar";
+@use "about";
+@use "technologies";
+@use "projects";
+@use "modal";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: rgb(243, 243, 243);
+  min-height: 220vh;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: Navine;
+  src: url("../assets/fonts/NavineDemo-SemiCondensed.ttf") format("truetype");
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../assets/fonts/RobotoFlex.ttf") format("truetype");
+}
+@font-face {
+  font-family: Reman;
+  src: url("../assets/fonts/NeueRemanSans-Regular.otf") format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&display=swap");
+.App {
+  margin: 0;
+  padding: 0;
+  font-family: Navine;
+}

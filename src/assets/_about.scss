@@ -1,0 +1,100 @@
+@use "variables" as v;
+.about {
+  text-align: center;
+  padding: 170px 0;
+  h2 {
+    text-transform: uppercase;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 170px;
+    animation: fade-in 0.8s;
+    span {
+      color: rgb(56, 57, 102);
+    }
+  }
+  & > ul {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    grid-auto-rows: 1fr;
+    list-style-type: none;
+    opacity: 1;
+    padding: 0;
+    text-align: center;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        width: fit-content;
+        margin: 0 auto;
+        background-color: v.$light_blue;
+        padding: 6px 35px;
+        font-size: 52px;
+        clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+      }
+      $n: 4;
+      @for $i from 1 through $n {
+        &:nth-of-type(#{$i}) {
+          animation: fade-in $i * 0.4s;
+          h3 {
+            animation: fade-in $i * 0.4s;
+          }
+          p {
+            animation: fade-in $i * 0.5s;
+          }
+          svg {
+            animation-duration: 2s + (0.4s * $i);
+          }
+        }
+      }
+      svg {
+        color: white;
+        animation: fade-in-icons;
+      }
+      h3 {
+        color: rgb(44, 44, 44);
+        font-family: "Maven Pro", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      p {
+        color: rgb(44, 44, 44);
+        font-family: "Raleway";
+        font-size: 15px;
+        min-height: 100px;
+        line-height: 21px;
+      }
+    }
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(30px, 150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+@keyframes fade-in-icons {
+  0% {
+    opacity: 0;
+    transform: rotate3d(0, 1, 0, 120deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}

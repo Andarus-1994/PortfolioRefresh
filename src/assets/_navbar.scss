@@ -1,0 +1,61 @@
+@use "variables" as v;
+.navbar {
+  padding: 0;
+  background-color: rgb(31, 31, 39);
+  border-bottom: 4px solid v.$light-blue;
+  &.static {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    animation: fade-in-navbar 1s;
+    nav {
+      display: flex;
+      justify-content: center;
+      $n: 4;
+      @for $i from 1 through $n {
+        a:nth-of-type(#{$i}) {
+          animation: fade-in-content-navbar $i * 0.4s;
+        }
+      }
+    }
+  }
+  nav {
+    width: 60%;
+    min-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    a {
+      font-family: "Raleway", sans-serif;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      margin: 0px 25px;
+      transition: 0.6s;
+      &:hover {
+        color: v.$light-blue;
+      }
+    }
+  }
+}
+
+@keyframes fade-in-navbar {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fade-in-content-navbar {
+  0% {
+    opacity: 0;
+    transform: translate(-50px, -10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0px);
+  }
+}

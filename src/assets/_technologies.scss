@@ -1,0 +1,57 @@
+@use "variables" as v;
+.tech {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 100px;
+    animation: fade-in 1s;
+    li {
+      display: flex;
+      flex-direction: row;
+      background-color: red;
+      width: 600px;
+      margin-bottom: 10px;
+      .techName {
+        width: 150px;
+        background-color: #54b3ac;
+        font-family: "Roboto";
+        color: white;
+        padding: 7px;
+        transition: 0.4s;
+        &:hover {
+          background-color: #428580;
+        }
+      }
+      .value {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        background-color: rgb(233, 235, 233);
+        overflow: hidden;
+        z-index: 10;
+        .fillValue {
+          left: 0;
+          position: absolute;
+          background-color: v.$light_blue;
+          height: 100%;
+          z-index: -10;
+          animation: fillValue 2s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fillValue {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
