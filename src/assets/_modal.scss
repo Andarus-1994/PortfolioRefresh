@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0px 0px 3px white, 0px 0px 7px 4px black;
+    animation-duration: 1s;
     img {
       max-height: 300px;
       object-fit: cover;
@@ -79,5 +80,47 @@
         }
       }
     }
+  }
+}
+
+@keyframes fade-in-modal-right {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+    rotate: 20deg;
+    transform: translateX(420px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    rotate: 0;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in-modal-middle {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+    transform: translateY(-420px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in-modal-left {
+  0% {
+    opacity: 0;
+    scale: 0.2;
+    rotate: -20deg;
+    transform: translateX(-420px);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0px);
   }
 }

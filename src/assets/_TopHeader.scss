@@ -11,7 +11,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  .whiteLight {
+    pointer-events: none;
+    position: absolute;
+    background: radial-gradient(
+      800px circle at 200px 200px,
+      rgba(93, 93, 95, 0.096),
+      transparent 40%
+    );
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    translate: -50% -50%;
+    &::after {
+      content: "";
+      position: absolute;
+      background: radial-gradient(
+        400px circle at 100px 100px,
+        rgba(59, 59, 61, 0.096),
+        transparent 70%
+      );
+      width: 50%;
+      height: 50%;
+      translate: 50% 50%;
+      border-radius: 50%;
+    }
+  }
   h2 {
     position: relative;
     font-size: 66px;
