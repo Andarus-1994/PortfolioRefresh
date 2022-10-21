@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/PortfolioRefresh/static/css/main.3444bb51.css",
+    "main.js": "/PortfolioRefresh/static/js/main.3efa736f.js",
+    "static/media/two.jpg": "/PortfolioRefresh/static/media/two.549e1e4c5e9ce65526af.jpg",
+    "static/media/RobotoFlex.ttf": "/PortfolioRefresh/static/media/RobotoFlex.089f24f5533cc2e811de.ttf",
+    "static/media/project_two.png": "/PortfolioRefresh/static/media/project_two.419554fd0e8897783be7.png",
+    "static/media/img1.jpg": "/PortfolioRefresh/static/media/img1.ab85ef7ffcd004cc9a94.jpg",
+    "static/media/img2.jpg": "/PortfolioRefresh/static/media/img2.31184fd4fe497dd8b9d7.jpg",
+    "static/media/img3.jpg": "/PortfolioRefresh/static/media/img3.d1bf7def8dfd9db7ea42.jpg",
+    "static/media/one.webp": "/PortfolioRefresh/static/media/one.c88a45c44874ff46ffdf.webp",
+    "static/media/project_one.png": "/PortfolioRefresh/static/media/project_one.72ebc3d0777c2a3bdc5d.png",
+    "static/media/project_three.png": "/PortfolioRefresh/static/media/project_three.c714756f6d454da79cbb.png",
+    "static/media/NavineDemo-SemiCondensed.ttf": "/PortfolioRefresh/static/media/NavineDemo-SemiCondensed.4637b5a35051f1dbc5eb.ttf",
+    "static/media/NeueRemanSans-Regular.otf": "/PortfolioRefresh/static/media/NeueRemanSans-Regular.f8a7b64a7d38013bb777.otf",
+    "static/media/project_five.png": "/PortfolioRefresh/static/media/project_five.d3fc0fdd40d1a732e8e5.png",
+    "static/media/project_four.png": "/PortfolioRefresh/static/media/project_four.b8dfbaa9630120f31cec.png",
+    "index.html": "/PortfolioRefresh/index.html",
+    "main.3444bb51.css.map": "/PortfolioRefresh/static/css/main.3444bb51.css.map",
+    "main.3efa736f.js.map": "/PortfolioRefresh/static/js/main.3efa736f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3444bb51.css",
+    "static/js/main.3efa736f.js"
+  ]
+}
