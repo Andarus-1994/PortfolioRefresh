@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import Image1 from "../assets/images/project_one.jpg";
 import Image2 from "../assets/images/project_two.png";
 import Image3 from "../assets/images/project_three.png";
@@ -15,7 +15,7 @@ function Projects() {
   const [visibile, setVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [activeObject, setActiveObject] = useState(null);
-  const [projects] = useState([
+  const [projects, setProjects] = useState([
     {
       name: "Blog Design",
       description: "It was made using Vue JS",
@@ -57,17 +57,58 @@ function Projects() {
       backgroundImage: Bg1,
       position: "",
     },
+    {
+      name: "X & 0",
+      description: "Fun little project, X&0 game.",
+      url: "https://andarus-1994.github.io/Xand0/",
+      image: Image5,
+      backgroundImage: Bg1,
+      position: "",
+    },
   ]);
+  const calculatePosition = useMemo(() => {
+    let dummyArray = projects;
+    if (visibile) {
+      projectsRef.current &&
+        Object.values(projectsRef.current.children).forEach(
+          (project, index) => {
+            console.log(project.getBoundingClientRect().x);
+            let position =
+              (document.body.getClientRects()[0].right - project.scrollWidth) /
+                2 >
+              project.getBoundingClientRect().x
+                ? "left"
+                : (document.body.getClientRects()[0].right -
+                    project.scrollWidth) /
+                    2 <
+                    project.getBoundingClientRect().x &&
+                  (document.body.getClientRects()[0].right +
+                    project.scrollWidth) /
+                    2 >
+                    project.getBoundingClientRect().x
+                ? "middle"
+                : "right";
+            dummyArray[index].position = position;
+          }
+        );
+    }
+    return dummyArray;
+  }, [visibile, projects]);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) setVisible(true);
     });
     observer.observe(projectsRef.current);
-  }, []);
+    setProjects(calculatePosition);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [calculatePosition]);
   return (
     <div className="projects" id="portfolio">
-      <h2 ref={projectsRef}>- My Projects -</h2>
+      <h2>- My Projects -</h2>
       {showModal && (
         <ModalProjects
           name={activeObject.name}
@@ -81,30 +122,34 @@ function Projects() {
           }}
         />
       )}
-      <ul style={visibile ? {} : { display: "none" }}>
+      <ul ref={projectsRef}>
         {projects.map((project, index) => (
           <li
-            style={{ backgroundImage: "url(" + project.backgroundImage + ")" }}
-            onClick={(e) => {
-              let position =
-                (document.body.getClientRects()[0].right -
-                  e.target.scrollWidth) /
-                  2 >
-                e.clientX
-                  ? "left"
-                  : (document.body.getClientRects()[0].right -
-                      e.target.scrollWidth) /
-                      2 <
-                      e.clientX &&
-                    (document.body.getClientRects()[0].right +
-                      e.target.scrollWidth) /
-                      2 >
-                      e.clientX
-                  ? "middle"
-                  : "right";
+            style={
+              visibile
+                ? project.position === "left"
+                  ? {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.3 * index + "s",
+                      animationName: "fade-in-left",
+                    }
+                  : project.position === "right"
+                  ? {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.3 * index + "s",
+                      animationName: "fade-in-right",
+                    }
+                  : {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.3 * index + "s",
+                      animationName: "fade-in-middle",
+                    }
+                : { opacity: "0" }
+            }
+            onClick={() => {
               document.body.style.overflow = "hidden";
               setShowModal(!showModal);
-              setActiveObject({ ...project, position: position });
+              setActiveObject({ ...project });
             }}
             key={index}
           >

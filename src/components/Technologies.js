@@ -31,10 +31,15 @@ function Technologies() {
     },
   ]);
   useEffect(() => {
+    let options = {
+      rootMargin: "0px",
+      threshold: 1,
+    };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting) setVisible(true);
-    });
+      if (entry.isIntersecting || entry.boundingClientRect.top < -10)
+        setVisible(true);
+    }, options);
     observer.observe(techRef.current);
   }, []);
   return (
@@ -43,7 +48,7 @@ function Technologies() {
       <ul style={visibile ? {} : { display: "none" }}>
         {technologiesList.map((tech, index) => {
           return (
-            <li key={index} style={{ animationDelay: 0.3 * index + "s" }}>
+            <li key={index} style={{ animationDelay: 0.2 * index + "s" }}>
               <div className="techName">{tech.name}</div>
               <div className="value">
                 {tech.value}
@@ -51,7 +56,7 @@ function Technologies() {
                   className="fillValue"
                   style={{
                     width: tech.value,
-                    animationDelay: 2 * 0.3 * index + "s",
+                    animationDelay: 1.2 * 0.3 * index + "s",
                   }}
                 ></div>
               </div>

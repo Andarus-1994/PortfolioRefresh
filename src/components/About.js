@@ -17,7 +17,8 @@ function About() {
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting) setVisible(true);
+      if (entry.isIntersecting || entry.boundingClientRect.top < -50)
+        setVisible(true);
     }, options);
     observer.observe(aboutRef.current);
   }, []);
