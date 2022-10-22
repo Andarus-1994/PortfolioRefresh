@@ -42,6 +42,10 @@
         padding: 6px 35px;
         font-size: 52px;
         clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+        transition: 0.8s;
+        &:hover {
+          transform: rotate3d(1, 1, 1, -55deg);
+        }
       }
       $n: 4;
       @for $i from 1 through $n {
@@ -83,11 +87,11 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translate(30px, 150px);
+    transform: translate(30px, 150px) rotate3d(1, 1, 1, -55deg);
   }
   100% {
     opacity: 1;
-    transform: translate(0px);
+    transform: translate(0px) rotate3d(1, 1, 1, 0deg);
   }
 }
 @keyframes fade-in-icons {

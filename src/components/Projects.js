@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Image1 from "../assets/images/project_one.png";
+import Image1 from "../assets/images/project_one.jpg";
 import Image2 from "../assets/images/project_two.png";
 import Image3 from "../assets/images/project_three.png";
 import Image4 from "../assets/images/project_four.png";
@@ -15,7 +15,7 @@ function Projects() {
   const [visibile, setVisible] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [activeObject, setActiveObject] = useState(null);
-  const [projects, setProjects] = useState([
+  const [projects] = useState([
     {
       name: "Blog Design",
       description: "It was made using Vue JS",

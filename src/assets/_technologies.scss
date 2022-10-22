@@ -7,13 +7,16 @@
     width: 600px;
     margin: 0 auto;
     margin-top: 100px;
-    animation: fade-in 1s;
     li {
       display: flex;
       flex-direction: row;
       background-color: red;
       width: 600px;
+      opacity: 0;
       margin-bottom: 10px;
+      animation-name: fade-in-bars;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
       .techName {
         width: 150px;
         background-color: #54b3ac;
@@ -36,11 +39,12 @@
         z-index: 10;
         .fillValue {
           left: 0;
+          transform: translateX(-500px);
           position: absolute;
           background-color: v.$light_blue;
           height: 100%;
           z-index: -10;
-          animation: fillValue 2s ease-in-out;
+          animation: fillValue 2s ease-in-out forwards;
         }
       }
     }
@@ -53,5 +57,16 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-bars {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

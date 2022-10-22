@@ -19,10 +19,16 @@ function Navbar() {
     <div className="nav">
       <div className={visibile ? "navbar" : "navbar static"}>
         <nav>
-          <a href="/#">HOME</a>
-          <a href="/#about">ABOUT</a>
-          <a href="/#portfolio">PORTFOLIO</a>
-          <a href="/#contact">CONTACT</a>
+          <a href="https://andarus-1994.github.io/PortfolioRefresh/#">HOME</a>
+          <a href="https://andarus-1994.github.io/PortfolioRefresh/#about">
+            ABOUT
+          </a>
+          <a href="https://andarus-1994.github.io/PortfolioRefresh/#portfolio">
+            PORTFOLIO
+          </a>
+          <a href="https://andarus-1994.github.io/PortfolioRefresh/#contact">
+            CONTACT
+          </a>
         </nav>
       </div>
       <div

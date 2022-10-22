@@ -4,7 +4,7 @@
     position: absolute;
     background-color: rgb(67, 82, 79);
     width: 2px;
-    height: 90%;
+    height: 100%;
     transform: rotate(35deg);
     z-index: 0;
     top: -150px;
@@ -23,7 +23,7 @@
 }
 @keyframes moveLine {
   0% {
-    transform: translate(500px, -500px) rotate(45deg);
+    transform: translate(700px, -700px) rotate(45deg);
     opacity: 1;
   }
   30% {

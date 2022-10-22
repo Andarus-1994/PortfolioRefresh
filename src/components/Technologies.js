@@ -43,11 +43,17 @@ function Technologies() {
       <ul style={visibile ? {} : { display: "none" }}>
         {technologiesList.map((tech, index) => {
           return (
-            <li key={index}>
+            <li key={index} style={{ animationDelay: 0.3 * index + "s" }}>
               <div className="techName">{tech.name}</div>
               <div className="value">
                 {tech.value}
-                <div className="fillValue" style={{ width: tech.value }}></div>
+                <div
+                  className="fillValue"
+                  style={{
+                    width: tech.value,
+                    animationDelay: 2 * 0.3 * index + "s",
+                  }}
+                ></div>
               </div>
             </li>
           );

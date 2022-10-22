@@ -11,10 +11,14 @@ function About() {
   const aboutRef = useRef();
   const [visibile, setVisible] = useState(false);
   useEffect(() => {
+    let options = {
+      rootMargin: "0px",
+      threshold: 0,
+    };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) setVisible(true);
-    });
+    }, options);
     observer.observe(aboutRef.current);
   }, []);
   return (

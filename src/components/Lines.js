@@ -3,13 +3,13 @@ import { useCallback, useEffect, useState } from "react";
 function Lines({ number }) {
   const [linesElement, setLinesElement] = useState([]);
   const randomNumberX = () => {
-    return Math.floor(Math.random() * (-350 - -150 + 1)) + -150;
+    return Math.floor(Math.random() * (-350 + 150 + 1)) + -200;
   };
   const randomNumberY = () => {
-    return Math.floor(Math.random() * (10 - 90 + 1)) + 90;
+    return Math.floor(Math.random() * (10 - 90 + 1)) + 100;
   };
   const transitionDelay = () => {
-    return Math.floor(Math.random() * (0 - 6 + 1)) + 6;
+    return Math.floor(Math.random() * (0 - 6 + 1)) + 4;
   };
   const lines = useCallback(() => {
     let tmp = [];

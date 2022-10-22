@@ -4,7 +4,7 @@ function ModalProjects({ name, description, url, image, position, onClose }) {
       onClose();
     }
   };
-  console.log(position);
+
   return (
     <div className="overlayModal" onClick={handleEvent}>
       <div
