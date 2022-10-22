@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PortfolioRefresh/static/css/main.fb616bf5.css",
-    "main.js": "/PortfolioRefresh/static/js/main.9fb126b4.js",
+    "main.css": "/PortfolioRefresh/static/css/main.ac7b6a63.css",
+    "main.js": "/PortfolioRefresh/static/js/main.be5569e5.js",
     "static/media/two.jpg": "/PortfolioRefresh/static/media/two.3991c005c97d7b153121.jpg",
     "static/media/RobotoFlex.ttf": "/PortfolioRefresh/static/media/RobotoFlex.089f24f5533cc2e811de.ttf",
     "static/media/img1.jpg": "/PortfolioRefresh/static/media/img1.38f9c2174e4c052e2e9e.jpg",
@@ -16,11 +16,11 @@
     "static/media/project_five.png": "/PortfolioRefresh/static/media/project_five.d3fc0fdd40d1a732e8e5.png",
     "static/media/project_four.png": "/PortfolioRefresh/static/media/project_four.b8dfbaa9630120f31cec.png",
     "index.html": "/PortfolioRefresh/index.html",
-    "main.fb616bf5.css.map": "/PortfolioRefresh/static/css/main.fb616bf5.css.map",
-    "main.9fb126b4.js.map": "/PortfolioRefresh/static/js/main.9fb126b4.js.map"
+    "main.ac7b6a63.css.map": "/PortfolioRefresh/static/css/main.ac7b6a63.css.map",
+    "main.be5569e5.js.map": "/PortfolioRefresh/static/js/main.be5569e5.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb616bf5.css",
-    "static/js/main.9fb126b4.js"
+    "static/css/main.ac7b6a63.css",
+    "static/js/main.be5569e5.js"
   ]
 }
