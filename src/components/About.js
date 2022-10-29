@@ -13,18 +13,21 @@ function About() {
   useEffect(() => {
     let options = {
       rootMargin: "0px",
-      threshold: 0,
+      threshold: 0.4,
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting || entry.boundingClientRect.top < -50)
+      if (entry.isIntersecting || entry.boundingClientRect.top < 750)
         setVisible(true);
     }, options);
     observer.observe(aboutRef.current);
+    return () => {
+      observer.disconnect();
+    };
   }, []);
   return (
-    <div className="about" id="about">
-      <h2 ref={aboutRef}>
+    <div className="about" id="about" ref={aboutRef}>
+      <h2>
         - <span>A</span>bout -
       </h2>
       <ul style={visibile ? {} : { display: "none" }}>

@@ -52,10 +52,16 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: 0.8s;
-        &:hover {
+        &:not(.disabled):hover {
           color: rgb(255, 255, 255);
           background-color: rgb(53, 113, 121);
         }
+      }
+      .disabled {
+        cursor: not-allowed;
+        color: white;
+        background: rgb(209, 205, 205) !important;
+        border: 1px solid rgb(116, 119, 116);
       }
       button {
         cursor: pointer;
@@ -90,6 +96,9 @@
     rotate: 20deg;
     transform: translateX(420px);
   }
+  20% {
+    transform: translateX(420px);
+  }
   100% {
     opacity: 1;
     scale: 1;
@@ -104,10 +113,13 @@
     scale: 0.2;
     transform: translateY(-420px);
   }
+  20% {
+    transform: translateY(-420px);
+  }
   100% {
     opacity: 1;
     scale: 1;
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
 }
 
@@ -116,6 +128,9 @@
     opacity: 0;
     scale: 0.2;
     rotate: -20deg;
+    transform: translateX(-420px);
+  }
+  20% {
     transform: translateX(-420px);
   }
   100% {

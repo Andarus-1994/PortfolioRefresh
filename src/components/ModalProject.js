@@ -21,7 +21,12 @@ function ModalProjects({ name, description, url, image, position, onClose }) {
         <h2>Name: {name}</h2>
         <p>{description}</p>
         <div className="flex-buttons">
-          <a href={url} target="_blank" rel="noreferrer">
+          <a
+            {...(url ? { href: url } : {})}
+            target="_blank"
+            rel="noreferrer"
+            className={url ? "" : "disabled"}
+          >
             Visit
           </a>
           <button onClick={onClose}>Close</button>

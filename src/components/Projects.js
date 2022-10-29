@@ -5,10 +5,12 @@ import Image3 from "../assets/images/project_three.png";
 import Image4 from "../assets/images/project_four.png";
 import Image5 from "../assets/images/project_five.png";
 import Bg0 from "../assets/images/one.webp";
-import Bg1 from "../assets/images/img1.jpg";
+import Bg1 from "../assets/images/toDo.jpg";
 import Bg2 from "../assets/images/img2.jpg";
 import Bg3 from "../assets/images/img3.jpg";
 import Bg4 from "../assets/images/two.jpg";
+import Bg5 from "../assets/images/ticTac-min.jpg";
+import Bg6 from "../assets/images/webCommerce-min.jpg";
 import ModalProjects from "./ModalProject";
 function Projects() {
   const projectsRef = useRef();
@@ -17,19 +19,12 @@ function Projects() {
   const [activeObject, setActiveObject] = useState(null);
   const [projects, setProjects] = useState([
     {
-      name: "Blog Design",
-      description: "It was made using Vue JS",
-      url: "https://andarus-1994.github.io/BlogDesign/",
-      image: Image1,
-      backgroundImage: Bg0,
-      position: "",
-    },
-    {
-      name: "Construction App",
-      description: "Construction industry Website. Created using ReactJS",
-      url: "https://andarus-1994.github.io/ConstructionCO/",
-      image: Image2,
-      backgroundImage: Bg2,
+      name: "To Do List",
+      description:
+        "A simple application that makes use of CRUD (create, read, update and delete) only on client side.",
+      url: "https://andarus-1994.github.io/ToDoList/",
+      image: Image4,
+      backgroundImage: Bg1,
       position: "",
     },
     {
@@ -42,11 +37,12 @@ function Projects() {
       position: "",
     },
     {
-      name: "To Do List",
-      description: "Testing the description",
-      url: "https://andarus-1994.github.io/ToDoList/",
-      image: Image4,
-      backgroundImage: Bg3,
+      name: "Construction App",
+      description:
+        "Construction industry presentation Website that makes use of a few animations and inventive design. Created using ReactJS.",
+      url: "https://andarus-1994.github.io/ConstructionCO/",
+      image: Image2,
+      backgroundImage: Bg2,
       position: "",
     },
     {
@@ -54,15 +50,25 @@ function Projects() {
       description: "Fun little project, X&0 game.",
       url: "https://andarus-1994.github.io/Xand0/",
       image: Image5,
-      backgroundImage: Bg1,
+      backgroundImage: Bg5,
       position: "",
     },
     {
-      name: "X & 0",
-      description: "Fun little project, X&0 game.",
-      url: "https://andarus-1994.github.io/Xand0/",
-      image: Image5,
-      backgroundImage: Bg1,
+      name: "Blog Design",
+      description:
+        "Website made using Vue JS only to practice some design skills.",
+      url: "https://andarus-1994.github.io/BlogDesign/",
+      image: Image1,
+      backgroundImage: Bg0,
+      position: "",
+    },
+    {
+      name: "E-Commerce Shop App",
+      description:
+        "This is an web application for E-Commerce (online shop) and it is created using Laravel for Back End and React for Front End. I focused mostly on creating functionality and just a bit on design. It contains the following main functionalities: creating user account/reseting user's password (via email), display products, dashboard for the admin to add / remove products, payment method (using stripe). ",
+      url: "",
+      image: Bg6,
+      backgroundImage: Bg6,
       position: "",
     },
   ]);
@@ -72,7 +78,6 @@ function Projects() {
       projectsRef.current &&
         Object.values(projectsRef.current.children).forEach(
           (project, index) => {
-            console.log(project.getBoundingClientRect().x);
             let position =
               (document.body.getClientRects()[0].right - project.scrollWidth) /
                 2 >
@@ -80,11 +85,11 @@ function Projects() {
                 ? "left"
                 : (document.body.getClientRects()[0].right -
                     project.scrollWidth) /
-                    2 <
+                    2 <=
                     project.getBoundingClientRect().x &&
                   (document.body.getClientRects()[0].right +
                     project.scrollWidth) /
-                    2 >
+                    2 >=
                     project.getBoundingClientRect().x
                 ? "middle"
                 : "right";
@@ -95,10 +100,14 @@ function Projects() {
     return dummyArray;
   }, [visibile, projects]);
   useEffect(() => {
+    let options = {
+      rootMargin: "0px",
+      threshold: 0.3,
+    };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
       if (entry.isIntersecting) setVisible(true);
-    });
+    }, options);
     observer.observe(projectsRef.current);
     setProjects(calculatePosition);
 

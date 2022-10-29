@@ -16,6 +16,10 @@ function Technologies() {
       value: "90%",
     },
     {
+      name: "SQL",
+      value: "80%",
+    },
+    {
       name: "React",
       value: "90%",
     },
@@ -48,7 +52,7 @@ function Technologies() {
       <ul style={visibile ? {} : { display: "none" }}>
         {technologiesList.map((tech, index) => {
           return (
-            <li key={index} style={{ animationDelay: 0.2 * index + "s" }}>
+            <li key={index} style={{ animationDelay: 0.1 * index + "s" }}>
               <div className="techName">{tech.name}</div>
               <div className="value">
                 {tech.value}
@@ -56,7 +60,7 @@ function Technologies() {
                   className="fillValue"
                   style={{
                     width: tech.value,
-                    animationDelay: 1.2 * 0.3 * index + "s",
+                    animationDelay: 1.2 * 0.1 * index + "s",
                   }}
                 ></div>
               </div>
