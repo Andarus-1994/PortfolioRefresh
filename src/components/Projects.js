@@ -19,6 +19,15 @@ function Projects() {
   const [activeObject, setActiveObject] = useState(null);
   const [projects, setProjects] = useState([
     {
+      name: "E-Commerce Shop App",
+      description:
+        "This is an web application for E-Commerce (online shop) and it is created using NextJS with TypeScript (React) for Front End and Laravel for Back End. I focused mostly on creating functionality and just a bit on design. It contains the following main functionalities: creating user account/reseting user's password (via email), display products, dashboard for the admin with different uses like view / add / remove products, preview user list and others. ",
+      url: "https://shop-andrey.vercel.app/",
+      image: Bg6,
+      backgroundImage: Bg6,
+      position: "",
+    },
+    {
       name: "To Do List",
       description:
         "A simple application that makes use of CRUD (create, read, update and delete) only on client side.",
@@ -55,20 +64,10 @@ function Projects() {
     },
     {
       name: "Blog Design",
-      description:
-        "Website made using Vue JS only to practice some design skills.",
+      description: "Website made using Vue JS only to practice some design skills.",
       url: "https://andarus-1994.github.io/BlogDesign/",
       image: Image1,
       backgroundImage: Bg0,
-      position: "",
-    },
-    {
-      name: "E-Commerce Shop App",
-      description:
-        "This is an web application for E-Commerce (online shop) and it is created using Laravel for Back End and React for Front End. I focused mostly on creating functionality and just a bit on design. It contains the following main functionalities: creating user account/reseting user's password (via email), display products, dashboard for the admin to add / remove products, payment method (using stripe). ",
-      url: "",
-      image: Bg6,
-      backgroundImage: Bg6,
       position: "",
     },
   ]);
@@ -76,26 +75,19 @@ function Projects() {
     let dummyArray = projects;
     if (visibile) {
       projectsRef.current &&
-        Object.values(projectsRef.current.children).forEach(
-          (project, index) => {
-            let position =
-              (document.body.getClientRects()[0].right - project.scrollWidth) /
-                2 >
-              project.getBoundingClientRect().x
-                ? "left"
-                : (document.body.getClientRects()[0].right -
-                    project.scrollWidth) /
-                    2 <=
-                    project.getBoundingClientRect().x &&
-                  (document.body.getClientRects()[0].right +
-                    project.scrollWidth) /
-                    2 >=
-                    project.getBoundingClientRect().x
-                ? "middle"
-                : "right";
-            dummyArray[index].position = position;
-          }
-        );
+        Object.values(projectsRef.current.children).forEach((project, index) => {
+          let position =
+            (document.body.getClientRects()[0].right - project.scrollWidth) / 2 >
+            project.getBoundingClientRect().x
+              ? "left"
+              : (document.body.getClientRects()[0].right - project.scrollWidth) / 2 <=
+                  project.getBoundingClientRect().x &&
+                (document.body.getClientRects()[0].right + project.scrollWidth) / 2 >=
+                  project.getBoundingClientRect().x
+              ? "middle"
+              : "right";
+          dummyArray[index].position = position;
+        });
     }
     return dummyArray;
   }, [visibile, projects]);
@@ -139,18 +131,18 @@ function Projects() {
                 ? project.position === "left"
                   ? {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.3 * index + "s",
+                      animationDelay: 0.2 * index + "s",
                       animationName: "fade-in-left",
                     }
                   : project.position === "right"
                   ? {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.3 * index + "s",
+                      animationDelay: 0.2 * index + "s",
                       animationName: "fade-in-right",
                     }
                   : {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.3 * index + "s",
+                      animationDelay: 0.2 * index + "s",
                       animationName: "fade-in-middle",
                     }
                 : { opacity: "0" }

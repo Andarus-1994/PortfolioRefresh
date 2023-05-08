@@ -16,6 +16,10 @@ function Technologies() {
       value: "90%",
     },
     {
+      name: "TypeScript",
+      value: "85%",
+    },
+    {
       name: "SQL",
       value: "80%",
     },
@@ -23,8 +27,12 @@ function Technologies() {
       name: "React",
       value: "90%",
     },
+    {
+      name: "NextJS",
+      value: "80%",
+    },
     { name: "Vue", value: "80%" },
-    { name: "Laravel", value: "60%" },
+    { name: "Laravel", value: "80%" },
     {
       name: "Spring",
       value: "30%",
@@ -41,8 +49,7 @@ function Technologies() {
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting || entry.boundingClientRect.top < -10)
-        setVisible(true);
+      if (entry.isIntersecting || entry.boundingClientRect.top < -10) setVisible(true);
     }, options);
     observer.observe(techRef.current);
   }, []);
