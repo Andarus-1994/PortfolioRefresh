@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: fade-in-page 1s;
   .whiteLight {
     pointer-events: none;
     position: absolute;
@@ -98,5 +99,14 @@
       background-color: v.$light_blue;
       width: 100%;
     }
+  }
+}
+
+@keyframes fade-in-page {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
   }
 }

@@ -131,18 +131,18 @@ function Projects() {
                 ? project.position === "left"
                   ? {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.2 * index + "s",
+                      animationDelay: 0.1 * index + "s",
                       animationName: "fade-in-left",
                     }
                   : project.position === "right"
                   ? {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.2 * index + "s",
+                      animationDelay: 0.1 * index + "s",
                       animationName: "fade-in-right",
                     }
                   : {
                       backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.2 * index + "s",
+                      animationDelay: 0.1 * index + "s",
                       animationName: "fade-in-middle",
                     }
                 : { opacity: "0" }

@@ -67,7 +67,7 @@ function Technologies() {
                   className="fillValue"
                   style={{
                     width: tech.value,
-                    animationDelay: 1.2 * 0.1 * index + "s",
+                    animationDelay: 1 * 0.1 * index + "s",
                   }}
                 ></div>
               </div>
