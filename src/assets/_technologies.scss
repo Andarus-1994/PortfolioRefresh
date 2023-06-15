@@ -50,6 +50,14 @@
       }
     }
   }
+  .note {
+    padding: 30px 30%;
+    font-size: 18px;
+    font-family: "Roboto";
+    opacity: 0;
+    animation: fade-in-page 1s forwards;
+    animation-delay: 2.2s;
+  }
 }
 
 @keyframes fillValue {

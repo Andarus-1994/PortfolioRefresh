@@ -109,7 +109,7 @@ function Projects() {
   }, [calculatePosition]);
   return (
     <div className="projects" id="portfolio">
-      <h2>- My Projects -</h2>
+      <h2> My Projects </h2>
       {showModal && (
         <ModalProjects
           name={activeObject.name}

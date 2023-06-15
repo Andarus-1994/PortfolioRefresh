@@ -17,8 +17,7 @@ function About() {
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
-      if (entry.isIntersecting || entry.boundingClientRect.top < 750)
-        setVisible(true);
+      if (entry.isIntersecting || entry.boundingClientRect.top < 750) setVisible(true);
     }, options);
     observer.observe(aboutRef.current);
     return () => {
@@ -28,7 +27,7 @@ function About() {
   return (
     <div className="about" id="about" ref={aboutRef}>
       <h2>
-        - <span>A</span>bout -
+        <span>A</span>bout
       </h2>
       <ul style={visibile ? {} : { display: "none" }}>
         <li>

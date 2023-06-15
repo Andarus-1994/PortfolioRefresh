@@ -56,6 +56,7 @@ function Technologies() {
   return (
     <div className="tech" id="tech">
       <div ref={techRef}></div>
+
       <ul style={visibile ? {} : { display: "none" }}>
         {technologiesList.map((tech, index) => {
           return (
@@ -75,6 +76,11 @@ function Technologies() {
           );
         })}
       </ul>
+      <div className="note">
+        <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with
+        different technologies. They represent my passion for coding and the dedication I bring to
+        each project.
+      </div>
     </div>
   );
 }
