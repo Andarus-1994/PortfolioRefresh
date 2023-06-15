@@ -76,7 +76,7 @@ function Technologies() {
           );
         })}
       </ul>
-      <div className="note">
+      <div className="note" style={visibile ? {} : { display: "none" }}>
         <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with
         different technologies. They represent my passion for coding and the dedication I bring to
         each project.
