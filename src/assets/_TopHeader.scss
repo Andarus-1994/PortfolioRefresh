@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   animation: fade-in-page 1s;
+  overflow: hidden;
   .whiteLight {
     pointer-events: none;
     position: absolute;
@@ -24,6 +25,7 @@
     width: 200px;
     border-radius: 50%;
     translate: -50% -50%;
+    z-index: 10;
     &::after {
       content: "";
       position: absolute;

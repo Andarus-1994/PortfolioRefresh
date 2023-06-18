@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 function Lines({ number }) {
   const [linesElement, setLinesElement] = useState([]);
   const randomNumberX = () => {
-    return Math.floor(Math.random() * (-350 + 0 + 1)) + 450;
+    return Math.floor(Math.random() * (-350 + 0 + 1)) + -150;
   };
   const randomNumberY = () => {
     return Math.floor(Math.random() * (10 - 90 + 1)) + 80;
@@ -12,7 +12,7 @@ function Lines({ number }) {
     return Math.floor(Math.random() * (0 - 6 + 1)) + 4;
   };
   const animationDuration = () => {
-    return Math.floor(Math.random() * (0 - 6 + 1)) + 15;
+    return Math.floor(Math.random() * (0 - 6 + 5)) + 12;
   };
   const lines = useCallback(() => {
     let tmp = [];
