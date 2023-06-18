@@ -9,7 +9,7 @@ function Lines({ number }) {
     return Math.floor(Math.random() * (10 - 90 + 1)) + 80;
   };
   const transitionDelay = () => {
-    return Math.floor(Math.random() * (0 - 6 + 1)) + 4;
+    return Math.floor(Math.random() * (0 - 6 + 1)) + 3;
   };
   const animationDuration = () => {
     return Math.floor(Math.random() * (0 - 6 + 5)) + 12;
