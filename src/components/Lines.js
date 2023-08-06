@@ -12,7 +12,7 @@ function Lines({ number }) {
     return Math.floor(Math.random() * (0 - 6 + 1)) + 3;
   };
   const animationDuration = () => {
-    return Math.floor(Math.random() * (0 - 6 + 5)) + 12;
+    return Math.floor(Math.random() * (0 - 6 + 5)) + 9;
   };
   const lines = useCallback(() => {
     let tmp = [];

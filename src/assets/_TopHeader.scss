@@ -46,8 +46,17 @@
     font-weight: 900;
     letter-spacing: 1px;
     z-index: 10;
-    span {
+    span:nth-of-type(1) {
+      position: relative;
       color: v.$light_blue;
+      z-index: 10;
+      & > span {
+        color: #8b1874;
+        position: absolute;
+        left: 0;
+        top: -10px;
+        z-index: -1;
+      }
     }
   }
   h3 {

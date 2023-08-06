@@ -94,7 +94,7 @@ function Projects() {
   useEffect(() => {
     let options = {
       rootMargin: "0px",
-      threshold: 0.3,
+      threshold: 0.25,
     };
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];

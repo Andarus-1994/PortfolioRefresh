@@ -2,7 +2,7 @@
 .navbar {
   padding: 0;
   background-color: rgb(31, 31, 39);
-  border-bottom: 4px solid v.$light-blue;
+  border-bottom: 3px solid v.$light-blue;
   &.static {
     position: fixed;
     top: 0;
@@ -15,7 +15,7 @@
       $n: 4;
       @for $i from 1 through $n {
         a:nth-of-type(#{$i}) {
-          animation: fade-in-content-navbar $i * 0.4s;
+          animation: fade-in-content-navbar $i * 0.2s;
         }
       }
     }
@@ -27,6 +27,7 @@
     padding: 10px;
     a {
       font-family: "Raleway", sans-serif;
+      font-weight: 900;
       font-size: 18px;
       color: white;
       text-decoration: none;
@@ -52,7 +53,7 @@
 @keyframes fade-in-content-navbar {
   0% {
     opacity: 0;
-    transform: translate(-50px, -10px);
+    transform: translate(0px, -20px);
   }
   100% {
     opacity: 1;

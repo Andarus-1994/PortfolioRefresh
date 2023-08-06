@@ -94,16 +94,16 @@
     opacity: 0;
     scale: 0.2;
     rotate: 20deg;
-    transform: translateX(420px);
+    transform: translateX(420px) scale(0);
   }
   20% {
-    transform: translateX(420px);
+    transform: translateX(420px) scale(0.3);
   }
   100% {
     opacity: 1;
     scale: 1;
     rotate: 0;
-    transform: translateX(0px);
+    transform: translateX(0px) scale(1);
   }
 }
 
