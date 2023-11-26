@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PortfolioRefresh/static/css/main.a6ba06fd.css",
-    "main.js": "/PortfolioRefresh/static/js/main.e95d37d4.js",
+    "main.css": "/PortfolioRefresh/static/css/main.dfb7f8c7.css",
+    "main.js": "/PortfolioRefresh/static/js/main.0db9e4d1.js",
     "static/media/RobotoFlex.ttf": "/PortfolioRefresh/static/media/RobotoFlex.089f24f5533cc2e811de.ttf",
     "static/media/project_two.png": "/PortfolioRefresh/static/media/project_two.546147e50c5fc41883d3.png",
     "static/media/webCommerce-min.jpg": "/PortfolioRefresh/static/media/webCommerce-min.a2ff93ba0e272a349f5c.jpg",
@@ -18,11 +18,11 @@
     "static/media/project_four.png": "/PortfolioRefresh/static/media/project_four.b8dfbaa9630120f31cec.png",
     "static/media/img3.jpg": "/PortfolioRefresh/static/media/img3.ecab514a85248a9eb948.jpg",
     "index.html": "/PortfolioRefresh/index.html",
-    "main.a6ba06fd.css.map": "/PortfolioRefresh/static/css/main.a6ba06fd.css.map",
-    "main.e95d37d4.js.map": "/PortfolioRefresh/static/js/main.e95d37d4.js.map"
+    "main.dfb7f8c7.css.map": "/PortfolioRefresh/static/css/main.dfb7f8c7.css.map",
+    "main.0db9e4d1.js.map": "/PortfolioRefresh/static/js/main.0db9e4d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6ba06fd.css",
-    "static/js/main.e95d37d4.js"
+    "static/css/main.dfb7f8c7.css",
+    "static/js/main.0db9e4d1.js"
   ]
 }
