@@ -1,13 +1,15 @@
 import { useEffect, useState, useRef, useMemo } from "react"
 import Image1 from "../assets/images/project_one.jpg"
-import Image2 from "../assets/images/project_two.png"
+import Image2 from "../assets/images/construction_image.png"
 import Image3 from "../assets/images/project_three.png"
 import Image4 from "../assets/images/project_four.png"
 import Image5 from "../assets/images/project_five.png"
-import Bg0 from "../assets/images/one.webp"
+import Image6 from "../assets/images/image_invoices.png"
+import ShopImage from "../assets/images/shop_image.png"
+import Bg0 from "../assets/images/invoices.png"
 import Bg1 from "../assets/images/toDo.jpg"
-import Bg2 from "../assets/images/img2.jpg"
-import Bg3 from "../assets/images/img3.jpg"
+import Bg2 from "../assets/images/project_two.png"
+import Bg3 from "../assets/images/blog.png"
 import Bg4 from "../assets/images/two.jpg"
 import Bg5 from "../assets/images/ticTac-min.jpg"
 import Bg6 from "../assets/images/webCommerce-min.jpg"
@@ -23,7 +25,7 @@ function Projects() {
       description:
         "This is an web application for E-Commerce (online shop) and it is created using NextJS with TypeScript (React) for Front End and Laravel for Back End. I focused mostly on creating functionality and just a bit on design. It contains the following main functionalities: creating user account/reseting user's password (via email), display products, dashboard for the admin with different uses like view / add / remove products, preview user list and others. ",
       url: "https://shop-andrey.vercel.app/",
-      image: Bg6,
+      image: ShopImage,
       backgroundImage: Bg6,
       position: "",
     },
@@ -45,10 +47,18 @@ function Projects() {
       position: "",
     },
     {
+      name: "Invoices App",
+      description: "Invoices. Work in progress app...",
+      url: "https://invoices-frontend-rho.vercel.app/",
+      image: Bg0,
+      backgroundImage: Image6,
+      position: "",
+    },
+    {
       name: "Construction App",
       description: "Construction industry presentation Website that makes use of a few animations and inventive design. Created using ReactJS.",
       url: "https://andarus-1994.github.io/ConstructionCO/",
-      image: Image2,
+      image: Bg2,
       backgroundImage: Image2,
       position: "",
     },
@@ -65,7 +75,7 @@ function Projects() {
       description: "Website made using Vue JS only to practice some design skills.",
       url: "https://andarus-1994.github.io/BlogDesign/",
       image: Image1,
-      backgroundImage: Image1,
+      backgroundImage: Bg5,
       position: "",
     },
   ])
