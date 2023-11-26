@@ -1,22 +1,22 @@
-import { useEffect, useState, useRef, useMemo } from "react";
-import Image1 from "../assets/images/project_one.jpg";
-import Image2 from "../assets/images/project_two.png";
-import Image3 from "../assets/images/project_three.png";
-import Image4 from "../assets/images/project_four.png";
-import Image5 from "../assets/images/project_five.png";
-import Bg0 from "../assets/images/one.webp";
-import Bg1 from "../assets/images/toDo.jpg";
-import Bg2 from "../assets/images/img2.jpg";
-import Bg3 from "../assets/images/img3.jpg";
-import Bg4 from "../assets/images/two.jpg";
-import Bg5 from "../assets/images/ticTac-min.jpg";
-import Bg6 from "../assets/images/webCommerce-min.jpg";
-import ModalProjects from "./ModalProject";
+import { useEffect, useState, useRef, useMemo } from "react"
+import Image1 from "../assets/images/project_one.jpg"
+import Image2 from "../assets/images/project_two.png"
+import Image3 from "../assets/images/project_three.png"
+import Image4 from "../assets/images/project_four.png"
+import Image5 from "../assets/images/project_five.png"
+import Bg0 from "../assets/images/one.webp"
+import Bg1 from "../assets/images/toDo.jpg"
+import Bg2 from "../assets/images/img2.jpg"
+import Bg3 from "../assets/images/img3.jpg"
+import Bg4 from "../assets/images/two.jpg"
+import Bg5 from "../assets/images/ticTac-min.jpg"
+import Bg6 from "../assets/images/webCommerce-min.jpg"
+import ModalProjects from "./ModalProject"
 function Projects() {
-  const projectsRef = useRef();
-  const [visibile, setVisible] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [activeObject, setActiveObject] = useState(null);
+  const projectsRef = useRef()
+  const [visibile, setVisible] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [activeObject, setActiveObject] = useState(null)
   const [projects, setProjects] = useState([
     {
       name: "E-Commerce Shop App",
@@ -29,8 +29,7 @@ function Projects() {
     },
     {
       name: "To Do List",
-      description:
-        "A simple application that makes use of CRUD (create, read, update and delete) only on client side.",
+      description: "A simple application that makes use of CRUD (create, read, update and delete) only on client side.",
       url: "https://andarus-1994.github.io/ToDoList/",
       image: Image4,
       backgroundImage: Bg1,
@@ -47,11 +46,10 @@ function Projects() {
     },
     {
       name: "Construction App",
-      description:
-        "Construction industry presentation Website that makes use of a few animations and inventive design. Created using ReactJS.",
+      description: "Construction industry presentation Website that makes use of a few animations and inventive design. Created using ReactJS.",
       url: "https://andarus-1994.github.io/ConstructionCO/",
       image: Image2,
-      backgroundImage: Bg2,
+      backgroundImage: Image2,
       position: "",
     },
     {
@@ -67,49 +65,46 @@ function Projects() {
       description: "Website made using Vue JS only to practice some design skills.",
       url: "https://andarus-1994.github.io/BlogDesign/",
       image: Image1,
-      backgroundImage: Bg0,
+      backgroundImage: Image1,
       position: "",
     },
-  ]);
+  ])
   const calculatePosition = useMemo(() => {
-    let dummyArray = projects;
+    let dummyArray = projects
     if (visibile) {
       projectsRef.current &&
         Object.values(projectsRef.current.children).forEach((project, index) => {
           let position =
-            (document.body.getClientRects()[0].right - project.scrollWidth) / 2 >
-            project.getBoundingClientRect().x
+            (document.body.getClientRects()[0].right - project.scrollWidth) / 2 > project.getBoundingClientRect().x
               ? "left"
-              : (document.body.getClientRects()[0].right - project.scrollWidth) / 2 <=
-                  project.getBoundingClientRect().x &&
-                (document.body.getClientRects()[0].right + project.scrollWidth) / 2 >=
-                  project.getBoundingClientRect().x
+              : (document.body.getClientRects()[0].right - project.scrollWidth) / 2 <= project.getBoundingClientRect().x &&
+                (document.body.getClientRects()[0].right + project.scrollWidth) / 2 >= project.getBoundingClientRect().x
               ? "middle"
-              : "right";
-          dummyArray[index].position = position;
-        });
+              : "right"
+          dummyArray[index].position = position
+        })
     }
-    return dummyArray;
-  }, [visibile, projects]);
+    return dummyArray
+  }, [visibile, projects])
   useEffect(() => {
     let options = {
       rootMargin: "0px",
       threshold: 0.25,
-    };
+    }
     const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) setVisible(true);
-    }, options);
-    observer.observe(projectsRef.current);
-    setProjects(calculatePosition);
+      const entry = entries[0]
+      if (entry.isIntersecting) setVisible(true)
+    }, options)
+    observer.observe(projectsRef.current)
+    setProjects(calculatePosition)
 
     return () => {
-      observer.disconnect();
-    };
-  }, [calculatePosition]);
+      observer.disconnect()
+    }
+  }, [calculatePosition])
   return (
     <div className="projects" id="portfolio">
-      <h2> My Projects </h2>
+      {visibile && <h2> Personal Projects </h2>}
       {showModal && (
         <ModalProjects
           name={activeObject.name}
@@ -118,8 +113,8 @@ function Projects() {
           image={activeObject.image}
           position={activeObject.position}
           onClose={() => {
-            setShowModal(false);
-            document.body.style.overflowY = "auto";
+            setShowModal(false)
+            document.body.style.overflowY = "auto"
           }}
         />
       )}
@@ -148,9 +143,9 @@ function Projects() {
                 : { opacity: "0" }
             }
             onClick={() => {
-              document.body.style.overflow = "hidden";
-              setShowModal(!showModal);
-              setActiveObject({ ...project });
+              document.body.style.overflow = "hidden"
+              setShowModal(!showModal)
+              setActiveObject({ ...project })
             }}
             key={index}
           >
@@ -161,7 +156,7 @@ function Projects() {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default Projects;
+export default Projects

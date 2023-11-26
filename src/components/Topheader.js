@@ -1,45 +1,44 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import Lines from "./Lines";
-import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import Lines from "./Lines"
+import { useEffect, useRef, useState } from "react"
 function TopHeader() {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  const myName = useRef();
+  const [coords, setCoords] = useState({ x: 0, y: 0 })
+  const myName = useRef()
   const scrollTo = () => {
-    const element =
-      document.getElementById("portfolio").getBoundingClientRect().top + window.scrollY;
+    const element = document.getElementById("portfolio").getBoundingClientRect().top + window.scrollY
     window.scroll({
       top: element,
       behavior: "smooth",
-    });
-  };
-  useEffect(() => {});
+    })
+  }
+  useEffect(() => {})
 
   const handleMouseMove = (event) => {
     setCoords({
       x: event.pageX,
       y: event.pageY,
-    });
-    const spanElement = myName.current;
+    })
+    const spanElement = myName.current
     if (spanElement) {
-      const { left, top, width, height } = spanElement.getBoundingClientRect();
-      const mousePositionX = event.clientX;
-      const mousePositionY = event.clientY;
-      const distanceFromCenterX = mousePositionX - (left + width / 4);
-      const distanceFromCenterY = mousePositionY - (top + height * 11);
-      spanElement.style.left = distanceFromCenterX / 150 + "px";
-      spanElement.style.top = distanceFromCenterY / 150 + "px";
+      const { left, top, width, height } = spanElement.getBoundingClientRect()
+      const mousePositionX = event.clientX
+      const mousePositionY = event.clientY
+      const distanceFromCenterX = mousePositionX - (left + width / 4)
+      const distanceFromCenterY = mousePositionY - (top + height * 11)
+      spanElement.style.left = distanceFromCenterX / 200 + "px"
+      spanElement.style.top = distanceFromCenterY / 200 + "px"
     }
-  };
+  }
   return (
     <div
       className="TopHeader"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => {
-        document.getElementsByClassName("whiteLight")[0].style.display = "none";
+        document.getElementsByClassName("whiteLight")[0].style.display = "none"
       }}
       onMouseEnter={() => {
-        document.getElementsByClassName("whiteLight")[0].style.display = "inline";
+        document.getElementsByClassName("whiteLight")[0].style.display = "inline"
       }}
     >
       <div className="whiteLight" style={{ top: coords.y, left: coords.x }}></div>
@@ -48,17 +47,16 @@ function TopHeader() {
         <span>
           Andrei <span ref={myName}>Andrei</span>
         </span>{" "}
-        .
       </h2>
       <h3>
-        I'm a <span>Web Developer</span>.
+        <span> Fullstack Web Developer</span>
       </h3>
       <button onClick={scrollTo}>
         View my work <FontAwesomeIcon icon={faArrowRight} />
       </button>
-      <Lines number={20} />
+      <Lines number={15} />
     </div>
-  );
+  )
 }
 
-export default TopHeader;
+export default TopHeader

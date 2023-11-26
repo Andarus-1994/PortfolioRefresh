@@ -16,11 +16,7 @@
   .whiteLight {
     pointer-events: none;
     position: absolute;
-    background: radial-gradient(
-      800px circle at 200px 200px,
-      rgba(93, 93, 95, 0.096),
-      transparent 40%
-    );
+    background: radial-gradient(800px circle at 200px 200px, rgba(93, 93, 95, 0.096), transparent 40%);
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -29,11 +25,7 @@
     &::after {
       content: "";
       position: absolute;
-      background: radial-gradient(
-        400px circle at 100px 100px,
-        rgba(59, 59, 61, 0.096),
-        transparent 70%
-      );
+      background: radial-gradient(400px circle at 100px 100px, rgba(59, 59, 61, 0.096), transparent 70%);
       width: 50%;
       height: 50%;
       translate: 50% 50%;
@@ -42,10 +34,12 @@
   }
   h2 {
     position: relative;
-    font-size: 66px;
-    font-weight: 900;
+    font-size: 70px;
+    font-weight: 600;
+    font-family: "Roboto";
     letter-spacing: 1px;
     z-index: 10;
+    animation: 1s fade-in-page;
     span:nth-of-type(1) {
       position: relative;
       color: v.$light_blue;
@@ -62,12 +56,11 @@
   h3 {
     position: relative;
     font-size: 44px;
-    font-weight: 100;
+    font-weight: 500;
     letter-spacing: 1px;
+    font-family: "Roboto";
     z-index: 10;
-    span {
-      text-decoration: underline;
-    }
+    animation: 1.5s fade-in-page;
   }
   button {
     position: relative;

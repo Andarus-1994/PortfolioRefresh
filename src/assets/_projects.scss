@@ -7,7 +7,6 @@
     font-family: "Maven Pro", sans-serif;
     font-size: 65px;
     font-weight: 900;
-    letter-spacing: 1px;
     margin-bottom: 150px;
     color: rgb(59, 59, 59);
     animation: 1s fade-in;
@@ -49,7 +48,6 @@
       transition: 0.6s;
       &:hover {
         background-position: center;
-        border: 1px solid rgb(75, 73, 73);
       }
       &:hover .projectName {
         bottom: 180px;
