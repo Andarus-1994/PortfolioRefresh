@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PortfolioRefresh/static/css/main.a5cfbf65.css",
-    "main.js": "/PortfolioRefresh/static/js/main.689a1774.js",
+    "main.css": "/PortfolioRefresh/static/css/main.c41d43dc.css",
+    "main.js": "/PortfolioRefresh/static/js/main.d5777412.js",
     "static/media/RobotoFlex.ttf": "/PortfolioRefresh/static/media/RobotoFlex.089f24f5533cc2e811de.ttf",
     "static/media/shop_image.png": "/PortfolioRefresh/static/media/shop_image.cdb5085987b3e6165ee6.png",
     "static/media/project_two.png": "/PortfolioRefresh/static/media/project_two.546147e50c5fc41883d3.png",
@@ -20,11 +20,11 @@
     "static/media/project_five.png": "/PortfolioRefresh/static/media/project_five.d3fc0fdd40d1a732e8e5.png",
     "static/media/project_four.png": "/PortfolioRefresh/static/media/project_four.b8dfbaa9630120f31cec.png",
     "index.html": "/PortfolioRefresh/index.html",
-    "main.a5cfbf65.css.map": "/PortfolioRefresh/static/css/main.a5cfbf65.css.map",
-    "main.689a1774.js.map": "/PortfolioRefresh/static/js/main.689a1774.js.map"
+    "main.c41d43dc.css.map": "/PortfolioRefresh/static/css/main.c41d43dc.css.map",
+    "main.d5777412.js.map": "/PortfolioRefresh/static/js/main.d5777412.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5cfbf65.css",
-    "static/js/main.689a1774.js"
+    "static/css/main.c41d43dc.css",
+    "static/js/main.d5777412.js"
   ]
 }
