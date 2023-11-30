@@ -18,7 +18,7 @@
     height: 50px;
     width: 50px;
     font-size: 20px;
-    animation: fade-in-star 0.5s forwards;
+    animation: fade-in-star 1.5s forwards;
   }
   .whiteLight {
     pointer-events: none;
@@ -122,13 +122,47 @@
   }
 }
 
-@keyframes fade-in-star {
+@keyframes fade-in-star1 {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, -20px) scale(0.25);
+    opacity: 1;
+  }
+  5% {
+    transform: translate(0, -20px) scale(1);
     opacity: 1;
   }
   100% {
-    transform: translate(-50px, 140px);
-    opacity: 0.1;
+    transform: translate(0, 140px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-star2 {
+  0% {
+    transform: translate(0, -20px) scale(0.25);
+    opacity: 1;
+  }
+  5% {
+    transform: translate(0, -50px) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 170px) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-star3 {
+  0% {
+    transform: translate(20px, 20px) scale(0.25);
+    opacity: 1;
+  }
+  5% {
+    transform: translate(0, -50px) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50px, -70px) scale(1.2);
+    opacity: 0;
   }
 }

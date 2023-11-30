@@ -49,6 +49,7 @@ function TopHeader() {
         star.style.left = coords.x - lightRect.left + "px"
         star.style.top = coords.y - lightRect.top + "px"
         star.style.color = getRandomColor()
+        star.style.animationName = getRandomAnimation()
         setTimeout(() => {
           star.remove()
         }, [750])
@@ -65,6 +66,11 @@ function TopHeader() {
     const colors = ["#00d9ff", "#ffffff", "#7da6ad"]
     const randomIndex = Math.floor(Math.random() * colors.length)
     return colors[randomIndex]
+  }
+  function getRandomAnimation() {
+    const animations = ["fade-in-star1", "fade-in-star2", "fade-in-star3"]
+    const randomIndex = Math.floor(Math.random() * animations.length)
+    return animations[randomIndex]
   }
   function getRandomIcon() {
     const icons = [faPlay, faStar, faBolt, faHashtag]
