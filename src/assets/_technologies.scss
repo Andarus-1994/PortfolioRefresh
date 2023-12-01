@@ -8,6 +8,14 @@
     width: 600px;
     margin: 0 auto;
     margin-top: 100px;
+    &.trigger-animation li {
+      animation-name: fade-in-bars;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+    }
+    &.trigger-animation .fillValue {
+      animation: fillValue 1.6s ease-in-out forwards;
+    }
     li {
       display: flex;
       flex-direction: row;
@@ -15,9 +23,6 @@
       width: 600px;
       opacity: 0;
       margin-bottom: 10px;
-      animation-name: fade-in-bars;
-      animation-duration: 1s;
-      animation-fill-mode: forwards;
       .techName {
         width: 150px;
         background-color: #54b3ac;
@@ -45,7 +50,6 @@
           background-color: v.$light_blue;
           height: 100%;
           z-index: -10;
-          animation: fillValue 1.8s ease-in-out forwards;
         }
       }
     }
@@ -55,8 +59,8 @@
     font-size: 18px;
     font-family: "Roboto";
     opacity: 0;
-    animation: fade-in-page 1.5s forwards;
-    animation-delay: 2s;
+    animation: fade-in-text 0.5s forwards ease-out;
+    animation-delay: 1.6s;
   }
 }
 
@@ -73,6 +77,17 @@
   0% {
     opacity: 0;
     transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-text {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;

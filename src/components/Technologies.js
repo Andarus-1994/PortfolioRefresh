@@ -1,7 +1,7 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react"
 function Technologies() {
-  const techRef = useRef();
-  const [visibile, setVisible] = useState(false);
+  const techRef = useRef()
+  const [visibile, setVisible] = useState(false)
   const [technologiesList] = useState([
     {
       name: "HTML",
@@ -41,23 +41,23 @@ function Technologies() {
       name: "SCSS",
       value: "90%",
     },
-  ]);
+  ])
   useEffect(() => {
     let options = {
       rootMargin: "0px",
-      threshold: 1,
-    };
+      threshold: 0.5,
+    }
     const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting || entry.boundingClientRect.top < -10) setVisible(true);
-    }, options);
-    observer.observe(techRef.current);
-  }, []);
+      const entry = entries[0]
+      if (entry.isIntersecting || entry.boundingClientRect.top < -10) setVisible(true)
+    }, options)
+    observer.observe(techRef.current)
+  }, [])
   return (
     <div className="tech" id="tech">
-      <div ref={techRef}></div>
+      <div></div>
 
-      <ul style={visibile ? {} : { display: "none" }}>
+      <ul ref={techRef} className={visibile ? "trigger-animation" : ""}>
         {technologiesList.map((tech, index) => {
           return (
             <li key={index} style={{ animationDelay: 0.1 * index + "s" }}>
@@ -73,16 +73,15 @@ function Technologies() {
                 ></div>
               </div>
             </li>
-          );
+          )
         })}
       </ul>
       <div className="note" style={visibile ? {} : { display: "none" }}>
-        <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with
-        different technologies. They represent my passion for coding and the dedication I bring to
-        each project.
+        <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with different technologies. They represent my passion for
+        coding and the dedication I bring to each project.
       </div>
     </div>
-  );
+  )
 }
 
-export default Technologies;
+export default Technologies
