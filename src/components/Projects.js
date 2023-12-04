@@ -4,7 +4,7 @@ import Image2 from "../assets/images/construction_image.png"
 import Image3 from "../assets/images/project_three.png"
 import Image4 from "../assets/images/project_four.png"
 import Image5 from "../assets/images/project_five.png"
-import Image6 from "../assets/images/image_invoices.png"
+import Image6 from "../assets/images/image_invoices.jpg"
 import ShopImage from "../assets/images/shop_image.png"
 import Bg0 from "../assets/images/invoices.png"
 import Bg1 from "../assets/images/toDo.jpg"
@@ -48,7 +48,7 @@ function Projects() {
     },
     {
       name: "Invoices App",
-      description: "Invoices. Work in progress app...",
+      description: "Invoices. Made using React + Typescript on frontend & Node.js for backend.\n Work in progress app...",
       url: "https://invoices-frontend-rho.vercel.app/",
       image: Bg0,
       backgroundImage: Image6,
