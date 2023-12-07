@@ -90,7 +90,7 @@ function TopHeader() {
     >
       <div className="whiteLight" style={{ top: coords.y, left: coords.x }}></div>
       <h2>
-        Hello, I'm{" "}
+        Hello. I'm{" "}
         <span>
           Andrei <span ref={myName}>Andrei</span>
         </span>{" "}

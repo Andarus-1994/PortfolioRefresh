@@ -41,10 +41,10 @@
   }
   h2 {
     position: relative;
-    font-size: 70px;
+    font-size: 65px;
     font-weight: 600;
-    font-family: "Roboto";
-    letter-spacing: 1px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.5px;
     z-index: 10;
     animation: 1s fade-in-page;
     span:nth-of-type(1) {
@@ -62,10 +62,11 @@
   }
   h3 {
     position: relative;
-    font-size: 44px;
-    font-weight: 500;
+    font-size: 38px;
+    font-weight: 600;
     letter-spacing: 1px;
-    font-family: "Roboto";
+    color: #f0f0f0;
+    font-family: "Bebas Neue", sans-serif;
     z-index: 10;
     animation: 1.5s fade-in-page;
   }
