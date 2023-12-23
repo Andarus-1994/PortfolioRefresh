@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PortfolioRefresh/static/css/main.24264419.css",
+    "main.css": "/PortfolioRefresh/static/css/main.ba286db4.css",
     "main.js": "/PortfolioRefresh/static/js/main.b2e193c9.js",
     "static/media/RobotoFlex.ttf": "/PortfolioRefresh/static/media/RobotoFlex.089f24f5533cc2e811de.ttf",
     "static/media/shop_image.png": "/PortfolioRefresh/static/media/shop_image.cdb5085987b3e6165ee6.png",
@@ -20,11 +20,11 @@
     "static/media/project_five.png": "/PortfolioRefresh/static/media/project_five.d3fc0fdd40d1a732e8e5.png",
     "static/media/project_four.png": "/PortfolioRefresh/static/media/project_four.b8dfbaa9630120f31cec.png",
     "index.html": "/PortfolioRefresh/index.html",
-    "main.24264419.css.map": "/PortfolioRefresh/static/css/main.24264419.css.map",
+    "main.ba286db4.css.map": "/PortfolioRefresh/static/css/main.ba286db4.css.map",
     "main.b2e193c9.js.map": "/PortfolioRefresh/static/js/main.b2e193c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.24264419.css",
+    "static/css/main.ba286db4.css",
     "static/js/main.b2e193c9.js"
   ]
 }
