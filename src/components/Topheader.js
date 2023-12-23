@@ -4,6 +4,7 @@ import { faStar, faPlay, faBolt, faHashtag } from "@fortawesome/free-solid-svg-i
 import Lines from "./Lines"
 import { useEffect, useRef, useState } from "react"
 import { createRoot } from "react-dom/client"
+
 function TopHeader() {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
   const [prevCoords, setPrevCoords] = useState({ x: 0, y: 0 })

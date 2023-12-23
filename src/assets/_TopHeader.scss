@@ -46,7 +46,7 @@
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.5px;
     z-index: 10;
-    animation: 1s fade-in-main-element;
+    animation: 1s fade-in-page;
     span:nth-of-type(1) {
       position: relative;
       color: v.$light_blue;
@@ -68,7 +68,11 @@
     color: #f0f0f0;
     font-family: "Bebas Neue", sans-serif;
     z-index: 10;
-    animation: 1s fade-in-main-element;
+    animation: 1s fade-in-page;
+    span {
+      display: block;
+      height: 50px;
+    }
   }
   button {
     position: relative;
@@ -86,9 +90,7 @@
     letter-spacing: 1px;
     z-index: 100;
     transition: 0.4s;
-    opacity: 0;
-    animation: fade-in-page 1s forwards;
-    animation-delay: 0.8s;
+    animation: fade-in-page 1s;
     svg {
       margin-left: 10px;
       color: v.$light_blue;
@@ -114,17 +116,6 @@
       background-color: v.$light_blue;
       width: 100%;
     }
-  }
-}
-
-@keyframes fade-in-main-element {
-  0% {
-    transform: translate(0, -100px) scale(0.65);
-    opacity: 0.3;
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 1;
   }
 }
 
