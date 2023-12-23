@@ -30,6 +30,15 @@ function Projects() {
       position: "",
     },
     {
+      name: "Invoices App",
+      description:
+        " React and Typescript on the frontend, and backed by the robust capabilities of Node.js on the server side.\n Work in progress app...",
+      url: "https://invoices-frontend-rho.vercel.app/",
+      image: Bg0,
+      backgroundImage: Image6,
+      position: "",
+    },
+    {
       name: "To Do List",
       description: "A simple application that makes use of CRUD (create, read, update and delete) only on client side.",
       url: "https://andarus-1994.github.io/ToDoList/",
@@ -46,14 +55,7 @@ function Projects() {
       backgroundImage: Bg4,
       position: "",
     },
-    {
-      name: "Invoices App",
-      description: "Invoices. Made using React + Typescript on frontend & Node.js for backend.\n Work in progress app...",
-      url: "https://invoices-frontend-rho.vercel.app/",
-      image: Bg0,
-      backgroundImage: Image6,
-      position: "",
-    },
+
     {
       name: "Construction App",
       description: "Construction industry presentation Website that makes use of a few animations and inventive design. Created using ReactJS.",

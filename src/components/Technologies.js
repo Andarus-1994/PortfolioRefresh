@@ -45,7 +45,7 @@ function Technologies() {
   useEffect(() => {
     let options = {
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.3,
     }
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0]
