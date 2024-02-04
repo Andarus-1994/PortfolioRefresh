@@ -32,7 +32,7 @@ function Projects() {
     {
       name: "Invoices App",
       description:
-        " React and Typescript on the frontend, and backed by the robust capabilities of Node.js on the server side.\n Work in progress app...",
+        "Using React and Typescript for the frontend, and supported by the strong features of Node.js on the server side. It's an app that's still being worked on. Check it out!",
       url: "https://invoices-frontend-rho.vercel.app/",
       image: Bg0,
       backgroundImage: Image6,
