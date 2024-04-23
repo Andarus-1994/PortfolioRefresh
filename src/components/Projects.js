@@ -14,6 +14,8 @@ import Bg4 from "../assets/images/two.jpg"
 import Bg5 from "../assets/images/ticTac-min.jpg"
 import Bg6 from "../assets/images/webCommerce-min.jpg"
 import ModalProjects from "./ModalProject"
+import { motion } from "framer-motion"
+
 function Projects() {
   const projectsRef = useRef()
   const [visibile, setVisible] = useState(false)
@@ -114,6 +116,18 @@ function Projects() {
       observer.disconnect()
     }
   }, [calculatePosition])
+
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0)
+
+  useEffect(() => {
+    if (visibile) {
+      const interval = setInterval(() => {
+        setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length)
+      }, 4000)
+      return () => clearInterval(interval)
+    }
+  }, [projects.length, visibile])
+
   return (
     <div className="projects" id="portfolio">
       {visibile && <h2> Personal Projects </h2>}
@@ -131,41 +145,61 @@ function Projects() {
         />
       )}
       <ul ref={projectsRef}>
-        {projects.map((project, index) => (
-          <li
-            style={
-              visibile
-                ? project.position === "left"
-                  ? {
-                      backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.12 * index + "s",
-                      animationName: "fade-in-left",
-                    }
-                  : project.position === "right"
-                  ? {
-                      backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.17 * index + "s",
-                      animationName: "fade-in-right",
-                    }
-                  : {
-                      backgroundImage: "url(" + project.backgroundImage + ")",
-                      animationDelay: 0.15 * index + "s",
-                      animationName: "fade-in-middle",
-                    }
-                : { opacity: "0" }
-            }
-            onClick={() => {
-              document.body.style.overflow = "hidden"
-              setShowModal(!showModal)
-              setActiveObject({ ...project })
-            }}
-            key={index}
-          >
-            <div className="projectName">
-              <span>{project.name}</span>
-            </div>
-          </li>
-        ))}
+        {visibile &&
+          projects.map((project, index) => (
+            <li
+              style={
+                visibile
+                  ? project.position === "left"
+                    ? {
+                        backgroundImage: "url(" + project.backgroundImage + ")",
+                        animationDelay: 0.12 * index + "s",
+                        animationName: "fade-in-left",
+                      }
+                    : project.position === "right"
+                    ? {
+                        backgroundImage: "url(" + project.backgroundImage + ")",
+                        animationDelay: 0.17 * index + "s",
+                        animationName: "fade-in-right",
+                      }
+                    : {
+                        backgroundImage: "url(" + project.backgroundImage + ")",
+                        animationDelay: 0.15 * index + "s",
+                        animationName: "fade-in-middle",
+                      }
+                  : { opacity: "0" }
+              }
+              onClick={() => {
+                document.body.style.overflow = "hidden"
+                setShowModal(!showModal)
+                setActiveObject({ ...project })
+              }}
+              key={index}
+            >
+              {" "}
+              {index === currentProjectIndex && (
+                <motion.span
+                  initial={{ "--x": "100%" }}
+                  animate={{ "--x": "-100%" }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 4,
+                    scale: {
+                      type: "spring",
+                      stiffness: 10,
+                      damping: 5,
+                      mass: 0.1,
+                    },
+                  }}
+                  className="linearOverlay"
+                ></motion.span>
+              )}
+              <div className="projectName">
+                <span>{project.name}</span>
+              </div>
+            </li>
+          ))}
       </ul>
     </div>
   )

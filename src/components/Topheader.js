@@ -4,6 +4,7 @@ import { faStar, faPlay, faBolt, faHashtag } from "@fortawesome/free-solid-svg-i
 import Lines from "./Lines"
 import { useEffect, useRef, useState } from "react"
 import { createRoot } from "react-dom/client"
+import { motion } from "framer-motion"
 
 function TopHeader() {
   const [coords, setCoords] = useState({ x: 0, y: 0 })
@@ -99,9 +100,30 @@ function TopHeader() {
       <h3>
         <span> Fullstack Web Developer</span>
       </h3>
-      <button onClick={scrollTo}>
-        View my work <FontAwesomeIcon icon={faArrowRight} />
-      </button>
+      <motion.button
+        onClick={scrollTo}
+        initial={{ "--x": "40%" }}
+        animate={{ "--x": "-90%" }}
+        transition={{
+          repeat: Infinity,
+          repeatType: "loop",
+          duration: 4,
+          type: "spring",
+
+          scale: {
+            type: "spring",
+            stiffness: 10,
+            damping: 5,
+            mass: 0.1,
+          },
+        }}
+      >
+        <span className="linearCover">
+          {" "}
+          View my work <FontAwesomeIcon icon={faArrowRight} />
+        </span>
+        <span className="linearOverlay"></span>
+      </motion.button>
       <Lines number={15} />
     </div>
   )

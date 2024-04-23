@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react"
+import { motion } from "framer-motion"
+
 function Technologies() {
   const techRef = useRef()
   const [visibile, setVisible] = useState(false)
@@ -53,6 +55,13 @@ function Technologies() {
     }, options)
     observer.observe(techRef.current)
   }, [])
+
+  const variants = {
+    show: {
+      y: 0,
+      opacity: 1,
+    },
+  }
   return (
     <div className="tech" id="tech">
       <div></div>
@@ -60,7 +69,18 @@ function Technologies() {
       <ul ref={techRef} className={visibile ? "trigger-animation" : ""}>
         {technologiesList.map((tech, index) => {
           return (
-            <li key={index} style={{ animationDelay: 0.1 * index + "s" }}>
+            <motion.li
+              key={index}
+              initial={{ y: 800, opacity: 0 }}
+              animate={visibile ? "show" : ""}
+              variants={variants}
+              transition={{
+                type: "spring",
+                stiffness: 40,
+                delay: 0.1 * index,
+                duration: 3,
+              }}
+            >
               <div className="techName">{tech.name}</div>
               <div className="value">
                 {tech.value}
@@ -72,13 +92,13 @@ function Technologies() {
                   }}
                 ></div>
               </div>
-            </li>
+            </motion.li>
           )
         })}
       </ul>
       <div className="note" style={visibile ? {} : { display: "none" }}>
-        <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with different technologies. They represent my passion for
-        coding and the dedication I bring to each project.
+        <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with different technologies. They represent my passion for coding and the
+        dedication I bring to each project.
       </div>
     </div>
   )

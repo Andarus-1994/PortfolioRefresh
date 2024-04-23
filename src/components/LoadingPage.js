@@ -1,13 +1,13 @@
 export default function LoadingPage() {
   return (
-    <div class="loadPage">
-      <div class="container">
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
+    <div className="loadPage">
+      <div className="container">
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
+        <div className="item"></div>
       </div>
     </div>
-  );
+  )
 }
