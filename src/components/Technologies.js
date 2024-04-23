@@ -71,14 +71,13 @@ function Technologies() {
           return (
             <motion.li
               key={index}
-              initial={{ y: 800, opacity: 0 }}
+              initial={{ y: 1500, opacity: 0 }}
               animate={visibile ? "show" : ""}
               variants={variants}
               transition={{
                 type: "spring",
-                stiffness: 40,
-                delay: 0.1 * index,
-                duration: 3,
+                delay: 0.15 * index,
+                duration: 1.8,
               }}
             >
               <div className="techName">{tech.name}</div>

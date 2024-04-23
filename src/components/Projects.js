@@ -84,6 +84,7 @@ function Projects() {
     },
   ])
   const calculatePosition = useMemo(() => {
+    console.log("enters here")
     let dummyArray = projects
     if (visibile) {
       projectsRef.current &&
@@ -145,61 +146,60 @@ function Projects() {
         />
       )}
       <ul ref={projectsRef}>
-        {visibile &&
-          projects.map((project, index) => (
-            <li
-              style={
-                visibile
-                  ? project.position === "left"
-                    ? {
-                        backgroundImage: "url(" + project.backgroundImage + ")",
-                        animationDelay: 0.12 * index + "s",
-                        animationName: "fade-in-left",
-                      }
-                    : project.position === "right"
-                    ? {
-                        backgroundImage: "url(" + project.backgroundImage + ")",
-                        animationDelay: 0.17 * index + "s",
-                        animationName: "fade-in-right",
-                      }
-                    : {
-                        backgroundImage: "url(" + project.backgroundImage + ")",
-                        animationDelay: 0.15 * index + "s",
-                        animationName: "fade-in-middle",
-                      }
-                  : { opacity: "0" }
-              }
-              onClick={() => {
-                document.body.style.overflow = "hidden"
-                setShowModal(!showModal)
-                setActiveObject({ ...project })
-              }}
-              key={index}
-            >
-              {" "}
-              {index === currentProjectIndex && (
-                <motion.span
-                  initial={{ "--x": "100%" }}
-                  animate={{ "--x": "-100%" }}
-                  transition={{
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 4,
-                    scale: {
-                      type: "spring",
-                      stiffness: 10,
-                      damping: 5,
-                      mass: 0.1,
-                    },
-                  }}
-                  className="linearOverlay"
-                ></motion.span>
-              )}
-              <div className="projectName">
-                <span>{project.name}</span>
-              </div>
-            </li>
-          ))}
+        {projects.map((project, index) => (
+          <li
+            style={
+              visibile
+                ? project.position === "left"
+                  ? {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.12 * index + "s",
+                      animationName: "fade-in-left",
+                    }
+                  : project.position === "right"
+                  ? {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.17 * index + "s",
+                      animationName: "fade-in-right",
+                    }
+                  : {
+                      backgroundImage: "url(" + project.backgroundImage + ")",
+                      animationDelay: 0.15 * index + "s",
+                      animationName: "fade-in-middle",
+                    }
+                : { opacity: "0" }
+            }
+            onClick={() => {
+              document.body.style.overflow = "hidden"
+              setShowModal(!showModal)
+              setActiveObject({ ...project })
+            }}
+            key={index}
+          >
+            {" "}
+            {index === currentProjectIndex && visibile && (
+              <motion.span
+                initial={{ "--x": "100%" }}
+                animate={{ "--x": "-100%" }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 4,
+                  scale: {
+                    type: "spring",
+                    stiffness: 10,
+                    damping: 5,
+                    mass: 0.1,
+                  },
+                }}
+                className="linearOverlay"
+              ></motion.span>
+            )}
+            <div className="projectName">
+              <span>{project.name}</span>
+            </div>
+          </li>
+        ))}
       </ul>
     </div>
   )
