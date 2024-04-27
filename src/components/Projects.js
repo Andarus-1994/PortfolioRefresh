@@ -124,7 +124,7 @@ function Projects() {
     if (visibile) {
       const interval = setInterval(() => {
         setCurrentProjectIndex((prevIndex) => (prevIndex + 1) % projects.length)
-      }, 4000)
+      }, 3500)
       return () => clearInterval(interval)
     }
   }, [projects.length, visibile])
@@ -184,7 +184,7 @@ function Projects() {
                 transition={{
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: 4,
+                  duration: 3.5,
                   scale: {
                     type: "spring",
                     stiffness: 10,

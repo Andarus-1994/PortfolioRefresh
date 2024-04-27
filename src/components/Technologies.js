@@ -71,11 +71,12 @@ function Technologies() {
           return (
             <motion.li
               key={index}
-              initial={{ y: 1500, opacity: 0 }}
+              initial={{ y: 500, opacity: 0 }}
               animate={visibile ? "show" : ""}
               variants={variants}
               transition={{
                 type: "spring",
+                stiffness: 35,
                 delay: 0.15 * index,
                 duration: 1.8,
               }}
@@ -95,10 +96,19 @@ function Technologies() {
           )
         })}
       </ul>
-      <div className="note" style={visibile ? {} : { display: "none" }}>
+      <motion.div
+        className="note"
+        style={visibile ? {} : { display: "none" }}
+        transition={{
+          type: "spring",
+          stiffness: 35,
+          delay: 2,
+          duration: 1.8,
+        }}
+      >
         <b>Note</b>: The grades reflect my enjoyment and proficiency levels in working with different technologies. They represent my passion for coding and the
         dedication I bring to each project.
-      </div>
+      </motion.div>
     </div>
   )
 }
